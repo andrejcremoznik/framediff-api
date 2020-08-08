@@ -1,4 +1,5 @@
 {
-  "host": "framediff-api-app.feathersjs.com",
-  "port": "PORT"
+  "host": "FRAMEDIFF_HOST",
+  "port": "FRAMEDIFF_PORT",
+  "secrets": "FRAMEDIFF_SECRETS"
 }

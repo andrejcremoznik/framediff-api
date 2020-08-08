@@ -1,18 +1,21 @@
-
+const { protect } = require('@feathersjs/authentication-local').hooks
+const secretCheck = require('../../hooks/secret-check')
+const preSaveObject = require('../../hooks/pre-save-object')
+const prePatchObject = require('../../hooks/pre-patch-object')
 
 module.exports = {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [],
-    update: [],
-    patch: [],
-    remove: []
+    create: [secretCheck(), preSaveObject()],
+    update: [secretCheck(), preSaveObject()],
+    patch: [secretCheck(), prePatchObject()],
+    remove: [secretCheck()]
   },
 
   after: {
-    all: [],
+    all: [protect('secret')],
     find: [],
     get: [],
     create: [],
@@ -30,4 +33,4 @@ module.exports = {
     patch: [],
     remove: []
   }
-};
+}
