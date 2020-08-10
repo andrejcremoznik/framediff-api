@@ -7,5 +7,5 @@
     "max": 50
   },
   "nedb": "../data",
-  "secrets": "secret"
+  "secrets": "passphrase"
 }

@@ -1,6 +1,6 @@
 module.exports = (options = {}) => {
   return async context => {
-    const { width, height, title } = context.data
+    const { object: [width, height, title] } = context.data
 
     const updatedData = {}
 

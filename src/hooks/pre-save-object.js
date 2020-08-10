@@ -1,6 +1,6 @@
 module.exports = (options = {}) => {
   return async context => {
-    const { width = 0, height = 0, title = '' } = context.data
+    const { object: [width = 0, height = 0, title = ''] } = context.data
 
     if (Number.isNaN(width) || width <= 0) {
       throw new Error('Invalid width.')
