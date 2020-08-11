@@ -26,6 +26,7 @@
   "scripts": {
     "test": "npm run lint && npm run mocha",
     "lint": "standard",
+    "lint-fix": "standard --fix",
     "dev": "nodemon src/",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit"
